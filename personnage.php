@@ -5,6 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "jeu_de_role";
 
+
 try {
 	$pdo = new PDO('mysql:host=' . $servername . ';dbname=' . $dbname, $username, $password);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,33 +18,9 @@ $stmt = $pdo->prepare("select * from  personnage order by nom");
 if ($stmt->execute()) {
 	$perso = $stmt->fetchAll();
 }
-
+include "header.php";
 ?>
-<!DOCTYPE html>
-<html>
 
-<head>
-	<title>Jeu de rôle médiéval</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-</head>
-
-<body>
-	<header>
-		<h1>Jeu de rôle médiéval</h1>
-		<nav>
-			<ul>
-				<li><a href="jeu.php">Accueil</a></li>
-				<li><a href="#">Profil</a></li>
-				<li><a href="personnage.php">Personnages</a></li>
-				<li><a href="#">Quêtes</a></li>
-				<li><a href="deconnexion.php">Déconnexion</a></li>
-			</ul>
-		</nav>
-	</header>
 	<div id="wrapper">
 		<main>
 			<h2>Liste des personnages</h2>
@@ -77,9 +54,7 @@ if ($stmt->execute()) {
 			</table>
 		</main>
 	</div>
-	<footer>
-		<p>&copy; 2023 Jeu de rôle médiéval - Tous droits réservés.</p>
-	</footer>
+	<?php include "footer.php"; ?>
 </body>
 
 </html>

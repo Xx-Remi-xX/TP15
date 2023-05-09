@@ -19,7 +19,7 @@ include "header.php";
 		</main>
 	</div>
 	<footer>
-		<p>&copy; 2023 Jeu de rôle médiéval - Tous droits réservés.</p>
+	<?php include "footer.php"; ?>
 	</footer>
 </body>
 

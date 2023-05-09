@@ -8,19 +8,13 @@ if (isset($_GET["erreur"])) {
 		$message = "Votre personnage est mort. Veuillez créer un nouveau personnage pour recommencer le jeu";
 	}
 }
+include "header.php";
 
 ?>
 <!DOCTYPE html>
 <html>
 
-<head>
-	<title>Création de personnage</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-</head>
+
 
 <body>
 	<div class="container"> <?= $message ?> <h1>Création de personnage</h1>
